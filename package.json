@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "lerna": "^5.1.8"
+  },
+  "dependencies": {
+    "nx": "^14.4.2"
+  }
+}
