@@ -2,19 +2,18 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
-import libCss from 'vite-plugin-libcss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), libCss(), dts({
-    insertTypesEntry: true
+  plugins: [react(), dts({
+    insertTypesEntry:true
   })],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'headless-components',
+      name: 'jhooks',
       formats: ['es'],
-      fileName: format => `headless.component.${format}.js`
+      fileName: format => `jhooks.${format}.js`
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

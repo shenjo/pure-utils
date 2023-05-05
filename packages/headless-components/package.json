@@ -3,29 +3,31 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --watch",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "files": [
     "dist"
   ],
-  "main": "./dist/my-lib.umd.js",
-  "module": "./dist/my-lib.es.js",
+  "main": "./dist/headless.component.es.js",
+  "module": "./dist/headless.component.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.js"
+      "import": "./dist/headless.component.es.js",
+      "require": "./dist/headless.component.es.js"
     }
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "vite-plugin-libcss": "^1.0.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
+    "less": "^4.1.3",
     "typescript": "^4.6.3",
     "vite": "^2.9.9",
     "vite-plugin-dts": "^1.2.0"

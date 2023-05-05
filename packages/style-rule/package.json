@@ -1,22 +1,16 @@
 {
-  "name": "@shenjo/hooks",
+  "name": "@shenjo/style-define",
   "version": "1.0.3",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --watch",
     "preview": "vite preview"
   },
   "files": [
-    "dist"
+    "src"
   ],
-  "main": "./dist/jhooks.es.js",
-  "module": "./dist/jhooks.es.js",
-  "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/jhooks.es.js",
-      "require": "./dist/jhooks.es.js"
-    }
+    "./themes/*": "./themes/*"
   },
   "dependencies": {
     "react": "^18.0.0",

@@ -1,0 +1,55 @@
+.dynamicWith(@count,@gap){
+  width: calc((100% - (@count - 1) * @gap) / @count);
+}
+
+.flex(@row:center,@column:center) {
+  display: flex;
+  align-items: @column;
+  justify-content: @row;
+}
+
+.size(@width,@height) {
+  width: @width;
+  height: @height
+}
+
+.square(@size) {
+  .size(@size, @size);
+}
+
+.marginHorizontal(@size) {
+  margin-left: @size;
+  margin-right: @size;
+}
+
+.marginVertical(@size) {
+  margin-top: @size;
+  margin-bottom: @size;
+}
+
+.paddingHorizontal(@size) {
+  padding-left: @size;
+  padding-right: @size;
+}
+
+.paddingVertical(@size) {
+  padding-top: @size;
+  padding-bottom: @size;
+}
+
+.single-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.multi-line-ellipsis(@line:2) {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp: @line;
+  word-break: break-all;
+  overflow: hidden;
+}
