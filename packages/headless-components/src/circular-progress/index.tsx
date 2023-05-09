@@ -33,6 +33,11 @@ function CircularProgress (props: CircularProgressProps) {
       <circle cx={radius} cy={radius} r={radius - strokeWidth / 2} stroke={inactiveColor} strokeWidth={strokeWidth} fill="none" />
       <circle cx={radius} cy={radius} r={radius - strokeWidth / 2} stroke={activeColor} strokeWidth={strokeWidth} fill="none" strokeDasharray={circumference}
               strokeDashoffset={dashOffset} transform={`rotate(-90 ${radius} ${radius})`} />
+      {/*{showText && (*/}
+      {/*  <text x={radius} y={radius} textAnchor="middle" dominantBaseline="central" fill={activeColor}>*/}
+      {/*    {Math.floor(progress * 100)}%*/}
+      {/*  </text>*/}
+      {/*)}*/}
     </svg>
   );
 }
