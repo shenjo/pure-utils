@@ -12,7 +12,6 @@ interface ICardListProps<T extends Id = any> {
   loading?: boolean
   reactive?: boolean;
   data: T[];
-  from?: 'DEFAULT' | 'IDE',
   empty?: any
   containerStyle?: any
 
@@ -23,7 +22,7 @@ interface ICardListProps<T extends Id = any> {
 }
 
 function CardList<T extends Id> (props: ICardListProps) {
-  const { from, gap = 16, count = 4, reactive = false, data, renderItem, onClick, cursorPointer, empty, loading = false, containerStyle } = props;
+  const { gap = 16, count = 4, reactive = false, data, renderItem, onClick, cursorPointer, empty, loading = false, containerStyle } = props;
   const style = useCssReactiveRule(count, gap, reactive);
 
   const onCardClick = useCallback((item: { id: string }) => () => onClick ? onClick(item) : null, []);
@@ -35,7 +34,7 @@ function CardList<T extends Id> (props: ICardListProps) {
     <div className={styles['card-wrapper']}>
       <div className={styles['card-list']} style={{ ...style.containerStyle, ...containerStyle }}>
         {data.map((item: { id: string, a: string }, index: number) => {
-          const dom = renderItem({ ...item, from }, index);
+          const dom = renderItem(item, index);
           return (
             <div key={item.id || index} className={styles['card-list-item']}
                  style={cursorPointer ? { ...style.itemStyle, cursor: 'pointer' } : { ...style.itemStyle }}
