@@ -1,4 +1,4 @@
-.dynamicWith(@count,@gap){
+.dynamicWith(@count,@gap) {
   width: calc((100% - (@count - 1) * @gap) / @count);
 }
 
@@ -54,9 +54,16 @@
   overflow: hidden;
 }
 
-.absolute-center{
+.absolute-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
