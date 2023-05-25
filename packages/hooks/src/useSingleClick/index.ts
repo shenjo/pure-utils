@@ -14,6 +14,9 @@ export default function useSingleClick (handler: any, options?: any) {
         result.then((res) => {
           setFalse();
           return res;
+        }).catch(err => {
+          setFalse();
+          return Promise.reject(err);
         });
       } else {
         setFalse();
@@ -23,5 +26,5 @@ export default function useSingleClick (handler: any, options?: any) {
     }
   });
 
-  return { handler: wrapperHandler };
+  return { handler: wrapperHandler, disabled };
 }
