@@ -1,13 +1,13 @@
 {
   "name": "@shenjo/style-define",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --watch",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "files": [
-    "src"
+    "themes"
   ],
   "exports": {
     "./themes/*": "./themes/*"
